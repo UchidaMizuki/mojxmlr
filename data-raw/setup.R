@@ -1,6 +1,6 @@
 library(tidyverse)
 library(fs)
 
-# setup -------------------------------------------------------------------
+pkgload::load_all()
 
-url_amx_project <- "https://raw.githubusercontent.com/amx-project"
+# setup -------------------------------------------------------------------

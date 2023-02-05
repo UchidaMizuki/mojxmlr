@@ -2,8 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-data-raw/*.rds
-data-raw/*/
-.Rdata
 .httr-oauth
 .DS_Store
+data-raw/*.rds
+data-raw/*/

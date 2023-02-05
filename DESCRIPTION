@@ -1,21 +1,29 @@
-Package: kuwanauchir
-Type: Package
-Title: What the Package Does (Title Case)
+Package: mojxmlr
+Title: Download and Read MOJ XML
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person("Mizuki", "Uchida", , "uchidamizuki@vivaldi.net", role = c("aut", "cre"))
+Description: You can download MOJ XML via 'kuwanauchi' and read them as a 'sf' 
+    object.
+License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Depends: 
-  R (>= 4.1.0)
 Imports: 
-    dplyr,
+    cli,
+    dplyr (>= 1.1.0),
+    fs,
+    memoise,
+    pillar,
+    purrr,
+    readr,
+    rlang,
     sf,
+    stickyr,
     stringr,
     tibble,
+    utils,
     vctrs,
     xml2
+Depends: 
+    R (>= 4.1.0)
