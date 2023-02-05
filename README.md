@@ -138,7 +138,7 @@ fude_polygon_kuwana_kajimachi |>
                     values = c(`TRUE` = "lightcoral",
                                `FALSE` = "lightgray")) +
   labs(caption = stringr::str_glue(
-    "出典:「登記所備付地図データ桑名市」(法務省)\n(https://www.geospatial.jp/ckan/dataset/houmusyouchizu-2022-1-1200)を加工して作成"
+    "出典:「登記所備付地図データ桑名市」(法務省)\n(https://github.com/amx-project/kuwanauchi24mie)を加工して作成"
     ))
 ```
 
