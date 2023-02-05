@@ -8,6 +8,15 @@
 \description{
 You can download MOJ XML via 'kuwanauchi' and read them as a 'sf' object.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/UchidaMizuki/mojxmlr}
+  \item \url{https://uchidamizuki.github.io/mojxmlr/}
+  \item Report bugs at \url{https://github.com/UchidaMizuki/mojxmlr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Mizuki Uchida \email{uchidamizuki@vivaldi.net}
 
