@@ -13,7 +13,6 @@ Imports:
     cli,
     dplyr (>= 1.1.0),
     fs,
-    memoise,
     pillar,
     purrr,
     readr,
