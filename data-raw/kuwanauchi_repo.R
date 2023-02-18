@@ -2,7 +2,8 @@ source("data-raw/setup.R")
 
 # kuwanauchi_repo ---------------------------------------------------------
 
-kuwanauchi_repo <- gh::gh("/users/amx-project/repos") |>
+kuwanauchi_repo <- gh::gh("/users/amx-project/repos",
+                          .limit = Inf) |>
   map_chr(\(repo) repo$name) |>
   keep(\(repo) str_starts(repo, "kuwanauchi\\d{2}"))
 
