@@ -46,10 +46,10 @@ read_mojxml <- function(file,
 }
 
 read_mojxml_attr <- function(xml, lang_col_names) {
-  attr <- c("version", term_ja$map_name, term_ja$city_code, term_ja$city_name, term_ja$datum_type)
+  attr <- c("version", term_ja$map_name, term_ja$city_code, term_ja$city_name, term_ja$coord_system, term_ja$datum_type)
   name_attr <- switch(
     lang_col_names,
-    en = c("version", "map_name", "city_code", "city_name", "datum_type"),
+    en = c("version", "map_name", "city_code", "city_name", "coord_system", "datum_type"),
     ja = attr
   )
   attr |>
@@ -244,19 +244,10 @@ read_mojxml_map_info <- function(xml, lang_col_names) {
 }
 
 read_mojxml_crs <- function(xml) {
-  crs <- xml |>
+  xml |>
     xml_find_first(str_glue("./d1:{term_ja$coord_system}")) |>
-    xml_text()
-
-  if (crs == term_ja$coord_system_arbitrary) {
-    return(sf::NA_crs_)
-  } else {
-    crs <- crs |>
-      str_extract(str_glue("(?<={term_ja$coord_system_public[[1L]]})\\d+(?={term_ja$coord_system_public[[2L]]})")) |>
-      as.integer()
-
-    return(sf::st_crs(2442 + crs))
-  }
+    xml_text() |>
+    coord_system_to_crs()
 }
 
 read_mojxml_geometry_point <- function(xml, crs) {
